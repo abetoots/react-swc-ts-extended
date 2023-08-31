@@ -5,14 +5,17 @@ module.exports = {
     react: {
       version: "detect",
     },
+    "import/resolver": {
+      typescript: true,
+    },
   },
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:react/recommended",
+    "plugin:import/typescript",
     "plugin:react/jsx-runtime",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
@@ -42,6 +45,9 @@ module.exports = {
       files: ["src/**/*.ts?(x)"],
       parserOptions: {
         project: ["./tsconfig.json"],
+      },
+      rules: {
+        "react/prop-types": 0,
       },
     },
     {
