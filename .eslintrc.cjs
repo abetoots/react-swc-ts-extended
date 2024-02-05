@@ -24,7 +24,13 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "react-hooks", "react-refresh", "@typescript-eslint"],
+  plugins: [
+    "react",
+    "react-hooks",
+    "react-refresh",
+    "@typescript-eslint",
+    "tailwindcss",
+  ],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
@@ -48,10 +54,20 @@ module.exports = {
       },
       rules: {
         "react/prop-types": 0,
+        // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-misused-promises.md#checksvoidreturn
+        //disable this rule for jsx attributes like onClick
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            checksVoidReturn: {
+              attributes: false,
+            },
+          },
+        ],
       },
     },
     {
-      files: ["vite.config.ts", "tailwind.config.js"],
+      files: ["vite.config.ts", "tailwind.config.js", "postcss.config.js"],
       parserOptions: {
         project: ["./tsconfig.node.json"],
       },
