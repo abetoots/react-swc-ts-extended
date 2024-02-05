@@ -2,7 +2,7 @@
   "name": "react-swc-ts-extended",
   "description": "This is a boilerplate build with Vite + SWC, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier, Husky and lint-staged.",
   "license": "MIT",
-  "private": "true",
+  "private": true,
   "version": "0.0.0",
   "author": {
     "email": "caymo.abesuni@gmail.com",
